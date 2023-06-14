@@ -1,0 +1,34 @@
+
+/* fixed especificidad */
+html > body {
+    margin: 0;
+    padding: 0;
+
+    background-color: rgb(230, 230, 230);
+}
+
+
+
+section:is(#view-main__client , #view__client--edit, #view__client--add, #view__gestionvideojuegos--add ) > .view__container {
+    min-height: 65vh;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 10px;
+    border-style: 2px solid;
+    border-radius: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+#navbar {
+    background-color: #332d2d;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+
+}

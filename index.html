@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtro</title>
+
+    <link rel="stylesheet" href="./Assets/css/style.css">
+    <script defer src="./Assets/js/app.js"></script>
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css" rel="stylesheet" />
+
+
+    <!-- MDB -->
+    <script defer type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
+
+</head>
+
+<body>
+
+    <section id="navbar__section">
+
+        <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4 d-flex flex-column align-items-center">
+                <div>
+                    <a class="text-white h4" aria-current="page" href="#!">Gestión de Videojuegos</a>
+                </div>
+                <div>
+                    <a class="text-muted" aria-current="page" href="#!">Gestión de Videojuegos</a>
+                </div>
+                <div>
+                    <a class="text-muted" aria-current="page" href="#!">Compra de Videojuegos</a>
+                </div>
+                
+            </div>
+        </div>
+        <nav id="navbar" class="navbar navbar-dark bg-dark d-flex align-items-center">
+            <div class="container-fluid">
+                <button
+                class="navbar-toggler"
+                type="button"
+                data-mdb-toggle="collapse"
+                data-mdb-target="#navbarToggleExternalContent"
+                aria-controls="navbarToggleExternalContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+                >
+                    <i class="fa-regular fa-eye fa-beat fa-2x"></i>
+
+                </button>
+            </div>
+        </nav>
+
+    </section>
+
+    <section id="view-main__client">
+        
+        <div class="view__container container-lg container-fluid my-5 p-5">
+            
+            <div class="row">
+                <div class="col-12">
+                    
+                    <div class="text-center my-5">
+                        <h1>Gestión de Clientes</h1>
+                    </div>
+
+                    <div class="d-flex p-4">
+                        
+                        <div class="input-group w-25">
+                            <div class="form-outline">
+                              <input id="inputBuscarCliente" type="search" id="form1" class="form-control" />
+                              <label class="form-label" for="form1">Buscar</label>
+                            </div>
+                            <button type="button" class="btn btn-primary">
+                              <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+    
+                        <div class="ms-auto ">
+                            <button id="btnAgregar" type="button" class="btn btn-info btn-rounded" data-mdb-ripple-color="dark">
+                                <i class="fa-solid fa-user-plus fa-fade"></i>
+                            </button>
+                        </div>
+                        
+
+                    </div>
+                    
+                </div>
+            </div>
+
+            <table class="table table-hover align-middle mb-0 bg-white">
+                <thead class="bg-light">
+                    <tr>
+                        <th>Identificación</th>
+                        <th>Nombre</th>
+                        <th>Contacto</th>
+                        <th>Nacionalidad</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="client_table--body">
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <div class="ms-3">
+                                    <p class="fw-bold mb-1">1098765432</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <p class="fw-normal mb-1">Alexander Calderón</p>
+                            <p class="text-muted mb-0">2000-01-30</p> <!-- Y-m-d -->
+
+                        </td>
+                        <td>
+                            <p class="fw-normal mb-1">3176543210</p>
+                            <p class="text-muted mb-0">anonymous@fake.user</p>
+                        </td>
+                        <td>
+                            <span class="badge badge-success rounded-pill d-inline">Colombiana</span>
+                        </td>
+                        <td>
+                            <button id="btnEditar" type="button" class="btn btn-warning btn-floating">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </button>
+                            <button id="btnEliminar" type="button" class="btn btn-danger btn-floating">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+
+                    
+
+
+                    
+                </tbody>
+            </table>
+
+
+        </div>
+
+    </section>
+
+    <section id="view__client--edit">
+        
+        <div class="view__container container-lg container-fluid my-5 p-5">
+            
+            <div class="row">
+                <div class="col-12">
+                    
+                    <div class="text-center my-5">
+                        <h1>Modificar Cliente</h1>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-4 col-sm-6 col-12 mb-4 mb-sm-5">
+                    
+                    <div class="form-outline">
+                        <input type="text" id="editclient__input--identificacion" class="form-control" />
+                        <input type="hidden" id="editclient__input--ID" class="form-control" />
+                        <label class="form-label" for="editclient__input--identificacion">Número de Identificación</label>                        
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 col-sm-6 col-12 mb-4 mb-sm-5">
+                    
+                    <div class="form-outline">
+                        <input type="text" id="editclient__input--nombre" class="form-control" />
+                        <label class="form-label" for="editclient__input--nombre">Nombre</label>                        
+                    </div>
+
+                </div>
+                <div class="col-lg-4 col-sm-6 col-12 mb-4 mb-sm-5">
+                    
+                    <div class="form-outline">
+                        <input type="text" id="editclient__input--apellido" class="form-control" />
+                        <label class="form-label" for="editclient__input--apellido">Apellido</label>                        
+                    </div>
+
+                </div>
+                <div class="col-lg-4 col-sm-6 col-12 mb-4 mb-sm-5">
+                    
+                    <div class="form-outline">
+                        <input type="text" id="editclient__input--telefono" class="form-control" />
+                        <label class="form-label" for="editclient__input--telefono">Teléfono</label>                        
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 col-sm-6 col-12 mb-4 mb-sm-5">
+                    
+                    <div class="form-outline">
+                        <input type="text" id="editclient__input--email" class="form-control" />
+                        <label class="form-label" for="editclient__input--email">Correo Electrónico</label>                        
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 col-sm-6 col-12 mb-4 mb-sm-5">
+                    
+                    <div class="form-outline">
+                        <input type="text" id="editclient__input--nacimiento" class="form-control" />
+                        <label class="form-label" for="editclient__input--nacimiento">Fecha de Nacimiento</label>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 col-sm-6 col-12 mb-4 mb-sm-5">
+                    
+                    <div class="form-outline">
+                        <input type="text" id="editclient__input--nacionalidad" class="form-control" />
+                        <label class="form-label" for="editclient__input--nacionalidad">Nacionalidad</label>
+                    </div>
+
+                </div>
+
+
+                <div class="col-12 d-flex justify-content-center">
+                    <button id="confirmarEditarCliente" type="button" class="btn btn-info btn-rounded" data-mdb-ripple-color="dark">Confirmar</button>
+                    <button id="cancelarEditarCliente" type="button" class="btn btn-danger btn-rounded" data-mdb-ripple-color="dark">Cancelar</button>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+    
+
+
+
+    <section id="view__client--add">
+        
+        <div class="view__container container-lg container-fluid my-5 p-5">
+            
+            <div class="row">
+                <div class="col-12">
+                    
+                    <div class="text-center my-5">
+                        <h1>Agregar Cliente</h1>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-4 col-sm-6 col-12 mb-4 mb-sm-5">
+                    
+                    <div class="form-outline">
+                        <input type="text" id="addclient__input--identificacion" class="form-control" />
+                        <label class="form-label" for="addclient__input--identificacion">Número de Identificación</label>                        
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 col-sm-6 col-12 mb-4 mb-sm-5">
+                    
+                    <div class="form-outline">
+                        <input type="text" id="addclient__input--nombre" class="form-control" />
+                        <label class="form-label" for="addclient__input--nombre">Nombre</label>                        
+                    </div>
+
+                </div>
+                <div class="col-lg-4 col-sm-6 col-12 mb-4 mb-sm-5">
+                    
+                    <div class="form-outline">
+                        <input type="text" id="addclient__input--apellido" class="form-control" />
+                        <label class="form-label" for="addclient__input--apellido">Apellido</label>                        
+                    </div>
+
+                </div>
+                <div class="col-lg-4 col-sm-6 col-12 mb-4 mb-sm-5">
+                    
+                    <div class="form-outline">
+                        <input type="text" id="addclient__input--telefono" class="form-control" />
+                        <label class="form-label" for="addclient__input--telefono">Teléfono</label>                        
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 col-sm-6 col-12 mb-4 mb-sm-5">
+                    
+                    <div class="form-outline">
+                        <input type="text" id="addclient__input--email" class="form-control" />
+                        <label class="form-label" for="addclient__input--email">Correo Electrónico</label>                        
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 col-sm-6 col-12 mb-4 mb-sm-5">
+                    
+                    <div class="form-outline">
+                        <input type="text" id="addclient__input--nacimiento" class="form-control" />
+                        <label class="form-label" for="addclient__input--nacimiento">Fecha de Nacimiento</label>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 col-sm-6 col-12 mb-4 mb-sm-5">
+                    
+                    <div class="form-outline">
+                        <input type="text" id="addclient__input--nacionalidad" class="form-control" />
+                        <label class="form-label" for="addclient__input--nacionalidad">Nacionalidad</label>
+                    </div>
+
+                </div>
+
+
+                <div class="col-12 d-flex justify-content-center">
+                    <button id="confirmarAgregarCliente" type="button" class="btn btn-info btn-rounded" data-mdb-ripple-color="dark">Confirmar</button>
+                    <button id="cancelarAgregarCliente" type="button" class="btn btn-danger btn-rounded" data-mdb-ripple-color="dark">Cancelar</button>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--  -->
+
+
+    <section id="view__gestionvideojuegos--add">
+        
+        <div class="view__container container-lg container-fluid my-5 p-5">
+
+            <div class="row">
+                <div class="col-sm-3 col-12 mb-4 mb-sm-5">
+                    
+                    <div class="form-outline">
+                        <input type="text" id="addGame__input--nombre" class="form-control" />                        
+                        <label class="form-label" for="addGame__input--nombre">Nombre</label>                        
+                    </div>
+                    
+                </div>
+
+                <div class="col-sm-3 col-12 mb-4 mb-sm-5">                    
+                    <div class="form-outline">
+                        <input type="text" id="addGame__input--valorLicencia" class="form-control" />                        
+                        <label class="form-label" for="addGame__input--valorLicencia">Valor Licencia</label>                        
+                    </div>
+                    
+                </div>
+
+                <div class="col-sm-3 col-12 mb-4 mb-sm-5">                    
+                    <div class="form-outline">
+                        <input type="text" id="addGame__input--pFidelizacion" class="form-control" />                        
+                        <label class="form-label" for="addGame__input--pFidelizacion">Puntos Fidelización</label>                        
+                    </div>
+                    
+                </div>
+
+                <div class="col-sm-3 col-12 mb-4 mb-sm-5">                    
+                    <div class="form-outline">
+                        <input type="text" id="editclient__input--tematica" class="form-control" />                        
+                        <label class="form-label" for="editclient__input--tematica">Temática</label>                        
+                    </div>
+                    
+                </div>
+
+                <div class="col-12 d-flex justify-content-center">
+                    <button id="confirmarAgregarJuego" type="button" class="btn btn-info btn-rounded" data-mdb-ripple-color="dark">Añadir</button>                    
+                </div>
+
+
+            </div>
+            
+            <div class="row">
+                <div class="col-12">
+                    
+                    <div class="text-center my-5">
+                        <h1>Gestión de Videojuegos</h1>
+                    </div>
+
+                    <div id="game--body" class="row">
+
+                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-sm-5">
+                            
+                            <div class="card" style="width: 18rem;">
+                                <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/062.webp" class="card-img-top" alt="Chicago Skyscrapers"/>
+                                <div class="card-body">
+                                  <h5 class="card-title">Nombre</h5>                                  
+                                </div>
+                                <ul class="list-group list-group-light list-group-small">
+                                  <li class="list-group-item px-4">Valor Licencia</li>
+                                  <li class="list-group-item px-4">Puntos para fidelización</li>
+                                  <li class="list-group-item px-4">Temática</li>
+                                </ul>
+                              </div>
+        
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-sm-5">
+                            
+                            <div class="card" style="width: 18rem;">
+                                <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/062.webp" class="card-img-top" alt="Chicago Skyscrapers"/>
+                                <div class="card-body">
+                                  <h5 class="card-title">Nombre</h5>                                  
+                                </div>
+                                <ul class="list-group list-group-light list-group-small">
+                                  <li class="list-group-item px-4">Valor Licencia</li>
+                                  <li class="list-group-item px-4">Puntos para fidelización</li>
+                                  <li class="list-group-item px-4">Temática</li>
+                                </ul>
+                              </div>
+        
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-sm-5">
+                            
+                            <div class="card" style="width: 18rem;">
+                                <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/062.webp" class="card-img-top" alt="Chicago Skyscrapers"/>
+                                <div class="card-body">
+                                  <h5 class="card-title">Nombre</h5>                                  
+                                </div>
+                                <ul class="list-group list-group-light list-group-small">
+                                  <li class="list-group-item px-4">Valor Licencia</li>
+                                  <li class="list-group-item px-4">Puntos para fidelización</li>
+                                  <li class="list-group-item px-4">Temática</li>
+                                </ul>
+                              </div>
+        
+                        </div>
+
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+
+
+
+</body>
+
+</html>
